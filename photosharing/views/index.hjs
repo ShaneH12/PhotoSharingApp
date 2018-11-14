@@ -5,7 +5,25 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <h1>Create Profile</h1>
+    <form action="/api/profile" method="post">
+      <input type="text" name="username" placeholder="Username" /><br />
+      <input type="text" name="password" placeholder="Password" /><br />
+      <input type="submit" value="Create" />
+    </form>
+
+    <h1>Create comment</h1>
+    <form action="/api/comment" method="post">
+      <input type="text" name="post" placeholder="Post" /><br />
+      <input type="text" name="text" placeholder="Text" /><br />
+      <input type="submit" value="Create" />
+    </form>
+
+    <h1>Create Post</h1>
+    <form action="/api/post" method="post">
+      <input type="text" name="image" placeholder="Image" /><br />
+      <input type="text" name="caption" placeholder="Caption" /><br />
+      <input type="submit" value="Create" />
+    </form>
   </body>
 </html>

@@ -4,7 +4,6 @@ var controllers = require('../controllers')
 
 router.get('/:resource', function(req, res, next) {
   var resource = req.params.resource
-
   var controller = controllers[resource]
   if (controller == null){
     res.json({
@@ -26,7 +25,59 @@ router.get('/:resource', function(req, res, next) {
       message: err
     })
   })
+})
 
+  router.get('/:resource/:id', function(req, res, next){
+    var resource = req.params.resource
+    var controller = controllers[resource]
+    if (controller == null){
+      res.json({
+        confirmation: 'fail',
+        message: 'Invalid Resource'
+      })
+      return
+  }
+
+  controller.getById(req.params.id, false)
+  .then(function(result){
+    res.json({
+      confirmation: 'success',
+      result: result
+    })
+  })
+  .catch(function(err){
+    console.log(err)
+    res.json({
+      confirmation: 'fail',
+      message: err
+    })
+  })
+})
+
+router.post('/:resource', function(req, res, next){
+  var resource = req.params.resource
+  var controller = controllers[resource]
+  if (controller == null){
+    res.json({
+      confirmation: 'fail',
+      message: 'Invalid Resource'
+    })
+
+    return
+}
+  controller.post(req.body, false)
+  .then(function(result){
+    res.json({
+    confirmation:'success',
+    result: result
+    })
+  })
+  .catch(function(err){
+    res.json({
+      confirmation: 'fail',
+      message: err
+    })
+  })
 })
 
 module.exports = router
