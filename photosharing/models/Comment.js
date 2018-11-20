@@ -9,4 +9,15 @@ var CommentSchema = new mongoose.Schema({
 
 })
 
+CommentSchema.methods.summary = function() {
+  var summary = {
+    profile: this.profile,
+    post: this.post,
+    text: this.text,
+    timestamp: this.timestamp,
+    id: this._id.toString()
+  }
+  return summary
+}
+
 module.exports = mongoose.model('CommentSchema', CommentSchema)
