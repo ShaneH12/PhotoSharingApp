@@ -11,7 +11,15 @@ module.exports = {
           reject(err)
           return
         }
+        if(isRaw)
           resolve(posts)
+        else {
+          var list = []
+          posts.forEach(function(post, i) {
+            list.push(post.summary())
+          })
+          resolve(list)
+        }
       })
 
     })
@@ -24,7 +32,10 @@ module.exports = {
           reject(err)
           return
         }
+        if (isRaw)
           resolve(post)
+        else
+          resolve(post.summary())
       })
     })
   },
@@ -36,10 +47,11 @@ module.exports = {
           reject(err)
           return
         }
+        if (isRaw)
           resolve(post)
+        else
+          resolve(post.summary())
       })
     })
   }
-
-
 }

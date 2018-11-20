@@ -10,7 +10,15 @@ module.exports = {
           reject(err)
           return
         }
+        if (isRaw)
           resolve(profiles)
+        else {
+          var list = []
+          profiles.forEach(function(profile, i) {
+            list.push(profile.summary())
+          })
+          resolve(list)
+        }
       })
 
     })
@@ -23,7 +31,10 @@ module.exports = {
           reject(err)
           return
         }
+        if (isRaw)
           resolve(profile)
+        else
+          resolve(profile.summary())
       })
     })
   },
@@ -35,7 +46,10 @@ module.exports = {
           reject(err)
           return
         }
+        if (isRaw)
           resolve(profile)
+        else
+          resolve(profile.summary())
       })
     })
   }

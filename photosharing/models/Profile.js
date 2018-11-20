@@ -8,4 +8,13 @@ var ProfileSchema = new mongoose.Schema({
 
 })
 
+ProfileSchema.methods.summary = function() {
+  var summary = {
+    username: this.username,
+    timestamp: this.timestamp,
+    id: this._id.toString()
+  }
+  return summary
+}
+
 module.exports = mongoose.model('ProfileSchema', ProfileSchema)
