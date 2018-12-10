@@ -12,7 +12,7 @@
   <body id="top">
     <div id="root"></div>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key="></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyAYA1eCg1ToFOxVfVxqZHzqNnNJFgnLNYw"></script>
 
       <script type="text/javascript" src="/build/vendor.min.js"></script>
     <script type="text/javascript" src="/build/bundle.js"></script>
