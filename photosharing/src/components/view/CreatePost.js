@@ -52,11 +52,11 @@ class CreatePost extends Component {
 		const timestamp = Date.now()/1000
 		const uploadPreset = 'xztt5re5'
 
-		const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+'2vr0RdPU_-Ak08chU610Evn7JiY'
+		const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+''
 
 		const signature = sha1(paramsStr)
 		const params = {
-			'api_key': '523691581968193',
+			'api_key': '',
 			'timestamp': timestamp,
 			'upload_preset': uploadPreset,
 			'signature': signature
