@@ -1,43 +1,38 @@
 import React, { Component } from 'react'
-import { Posts } from '../containers'
-import { MapNavigation }  from '../containers'
+import { Posts, MapNavigation, Account } from '../containers'
+import { Sidebar, Footer } from '../view'
 
 class Home extends Component {
-  render() {
-    const location = {
-      lat: 40.7575285,
-      long: -73.9884469
-    }
+	render(){
+		return (
+			<div>
+		        <header id="header" style={{padding:0}}>
+			        <div className="inner">
+						<MapNavigation />
 
-    return (
+			        </div>
+		        </header>
 
-      <div className="container">
-        Home Layout
-        <div className="row">
+				<div id="main">
+					<section id="one">
+						<div className="row">
+							<div className="8u 12u$(small)">
+								<Posts />
 
-          <div className="col-md-3">
-            <div style={{width:250, height:800, background:"red"}}>
-              <MapNavigation center={location} />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <Posts />
-          </div>
-          <div className="col-md-3">
-            Account
-            <form>
-              <input type="text" placeholder="username" />
-              <input type="text" placeholder="password" />
-              <button>Login</button>
-            </form>
-          </div>
+							</div>
 
-        </div>
+							<div className="4u 12u$(small)">
+								<Account />
 
-      </div>
+							</div>
+						</div>
 
-    )
-  }
+					</section>
+				</div>
+
+			</div>
+		)
+	}
 }
 
 export default Home
