@@ -2,7 +2,7 @@ CSET Software Project
  
 For my third-semester CSET software project, I chose to create an application similar to an Instagram clone with slightly different changes using React and Express.
  
- The photo-sharing app allows users to log in and create their own profile. Once logged in a user has the ability to upload pictures with a caption that displays on a photo feed. The uploaded picture also has geolocation attributed to it selected by the user from a map component.
+The photo-sharing app allows users to log in and create their own profile. Once logged in a user has the ability to upload pictures with a caption that displays on a photo feed. The uploaded picture also has geolocation attributed to it selected by the user from a map component.
  
 The user can also view photos uploaded by other users based on location, which can be changed using the map component. The user’s photo feed dynamically changes as a user scrolls to different areas on the map. The user will be viewing photos that were uploaded based explicitly on the location they point to on the map.
  
