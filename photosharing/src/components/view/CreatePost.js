@@ -46,11 +46,11 @@ class CreatePost extends Component {
 		console.log('imageSelected: ')
 		const image = files[0]
 
-		const cloudName = 'djdnximeg'
+		const cloudName = ''
 		const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
 
 		const timestamp = Date.now()/1000
-		const uploadPreset = 'xztt5re5'
+		const uploadPreset = ''
 
 		const paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+''
 
