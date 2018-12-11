@@ -1,0 +1,56 @@
+CSET Software Project
+ 
+For my third-semester CSET software project, I chose to create an application similar to an Instagram clone with slightly different changes using React and Express.
+ 
+ The photo-sharing app allows users to log in and create their own profile. Once logged in a user has the ability to upload pictures with a caption that displays on a photo feed. The uploaded picture also has geolocation attributed to it selected by the user from a map component.
+ 
+The user can also view photos uploaded by other users based on location, which can be changed using the map component. The user’s photo feed dynamically changes as a user scrolls to different areas on the map. The user will be viewing photos that were uploaded based explicitly on the location they point to on the map.
+ 
+Users have a logout option from the app and still can view photos on a feed, but a logged-out user does not have the ability to upload any content. All uploads must come from a signed in user and have both an image and caption attributed to the upload.
+  
+There are three main components of the user interface for this photo sharing app. The UI is broken up into three structured visible columns.
+ 
+The first column consists of the map component. The user can move the map around to any location on earth. It is built using the Google Maps API, satisfying the API implementation requirement.
+ 
+The second column of the UI is the photo uploading mechanism. This area is essentially a staging area for the user to select, view, and decide what photo they would like to upload. This section also is where the caption for the upload is written. Once the user has selected on an image and caption, they simply hit the submit button, and it automatically appears on the photo feed below the uploading area in this second column.
+ 
+The photo feed portion of the second column is where the user views all uploaded photos that have been uploaded in relation to the geolocation of the map component. The feed is essentially a table that has four columns per uploaded photos. The first column in the feed is where the photo appears, the second is for the caption display, the third displays what user uploaded the content, and the fourth is a delete/remove option of the uploaded content. Again, to reiterate, the photo feed dynamically changes and works in correlation with the location selected on the map component.
+ 
+The third column of the UI is the user account area. When first arriving at the site the user will see a login/sign up form. If a user has not already signed up, they will have to enter in a username and password of their choosing. Both the username and password portion of the form must be filled in, or the user will receive a pop-up error message instructing them on what information is missing. Once the correct info is inputted the user clicks the sign-up button, and they are then automatically registered. If the user has previously used the photo-sharing application, they would enter in their username and password from their initial sign up process and click the login in button. All passwords have been hashed and are secure. If the user misspells or inputs the wrong username or password a pop out error message will alert the user of what info is incorrect.
+ 
+To verify that the user has successfully logged in or signed up, the user will see their username displayed and a logout button replacing the login/sign up form. This component works directly with the uploading component as a user can only submit content for uploading if they are currently signed in.
+ 
+The database used for this project is MongoDB. The database consists of a profile schema and post schema. The profile schema includes a username, password, timestamp, and id. The post schema includes a profile, image, caption, geolocation, timestamp, and id. Each post is connected to the user that uploaded the content and geolocation on the map.
+ 
+The data visualization requirement is satisfied with the map component. The posts are linked to the map using geolocation and display based on the location the map is pointed to by the user.            
+ 
+Initially, I followed along with a Pusher tutorial for an Instagram clone, and that was what my first release showed. However, the tutorial had many flaws and inconsistencies. As I further researched and became a bit more familiar with React, I chose to scrap the project and start new. I still kept the core concept of a photo uploading feed that is similar to Instagram but incorporated a few different features.
+ 
+The first step in my project began by creating the API and React profile and post components and successfully connecting the back end to the front end. Once that portion was finished I moved on to the map component and pulled in the Google maps API. The map component was one of the most difficult to properly get working the way I wanted. After the map component displayed correctly, I moved on to the uploading images functionality.
+ 
+For the upload process, I created an account with Cloudinary. I created an upload button so a user can access files directly from their computer using a dropzone. Once the dropzone was complete, I set up an input for users to write out a caption that would accompany the image post.
+ 
+Next came the user registration/login form. The form consisted of an input for a username and password along with two button options for first-time registration and login for previous users. A user profile is created that is tied to every post that a specific user uploads.
+ 
+Now it was time to connect the map location and posts together so they would connect to a specific location. This was done through the map navigation container tying the post and the current location being viewed on the map.
+ 
+An HTML theme from strata was brought in for the design of the UI. A table was created that would hold the contents of the upload (image, caption, username, and delete/remove). I needed to make some styling adjustments for the size of the map and the uploading staging area.
+ 
+After the styling was corrected, I added a log out button in the account container that would display under the username of the logged in profile. Initially, I had a hard time thinking through how to get the log out button to work properly. I tried connecting it to the backend, but could not find a solution. In the end, I just linked the button to the logout endpoint that I created and that works just fine.
+ 
+Finally, I tried to add markers onto the map so that users could find the location of uploaded images more easily. I ran into many problems trying to sync up the posts and display a marker in the given area. I did get one marker to display when the app is first opened in the initial state location and photos in that particular location are attributed to, but for new uploads, in different locations, the markers do not display.
+ 
+Below are links to my Trello board, Swagger documentation, and deployed Heroku site.
+ 
+Link to Trello Board to view tasks and stories completed: https://trello.com/b/sqItUVKa
+ 
+Link to Swagger API documentation: https://app.swaggerhub.com/apis/shaneh12/PhotoSharingProject/0.1
+ 
+Link to Heroku:
+sh-photosharing.herokuapp.com
+ 
+Possible security concerns include users spamming with uploaded content. Also, the map is linked to where the user directs it and not the user’s actual location so a user could upload photos tied to a fake location. These concerns could be mitigated with the implementation of stricter uploading functionality.
+ 
+If further expanded, this application could be used to report real-time news as its happening with uploads coming from the exact location of where the breaking news is occurring. Examples could include major sporting events and major world events occurring and being reported on by journalists in real time. Ideally, markers of major events would be placed on the map for easier use by the user. Also, incorporating video along with images would help the expansion of this project. Due to time restrictions and current coding ability, those features were not obtainable at this point.
+
+ 
