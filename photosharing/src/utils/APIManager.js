@@ -47,6 +47,7 @@ export default {
 		})
 	},
 
+	// Superagent used to conduct upload
 	uploadFile: (url, file, params) => {
 		return new Promise((resolve, reject) => {
 

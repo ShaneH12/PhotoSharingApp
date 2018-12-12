@@ -2,7 +2,7 @@ CSET Software Project
  
 For my third-semester CSET software project, I chose to create an application similar to an Instagram clone with slightly different changes using React and Express.
  
-The photo-sharing app allows users to log in and create their own profile. Once logged in a user has the ability to upload pictures with a caption that displays on a photo feed. The uploaded picture also has geolocation attributed to it selected by the user from a map component.
+ The photo-sharing app allows users to log in and create their own profile. Once logged in a user has the ability to upload pictures with a caption that displays on a photo feed. The uploaded picture also has geolocation attributed to it selected by the user from a map component.
  
 The user can also view photos uploaded by other users based on location, which can be changed using the map component. The user’s photo feed dynamically changes as a user scrolls to different areas on the map. The user will be viewing photos that were uploaded based explicitly on the location they point to on the map.
  
@@ -36,7 +36,7 @@ Now it was time to connect the map location and posts together so they would con
  
 An HTML theme from strata was brought in for the design of the UI. A table was created that would hold the contents of the upload (image, caption, username, and delete/remove). I needed to make some styling adjustments for the size of the map and the uploading staging area.
  
-After the styling was corrected, I added a log out button in the account container that would display under the username of the logged in profile. Initially, I had a hard time thinking through how to get the log out button to work properly. I tried connecting it to the backend, but could not find a solution. In the end, I just linked the button to the logout endpoint that I created and that works just fine.
+After the styling was corrected, I added a log out button in the account container that would display under the username of the logged in profile. Initially, I had a hard time thinking through how to get the log out button to work properly. I tried connecting it to the backend, but could not find a solution. In the end, I just linked the button to the logout endpoint that I created and that works just fine. When that endpoint is hit the session is reset and login/registration form appears.
  
 Finally, I tried to add markers onto the map so that users could find the location of uploaded images more easily. I ran into many problems trying to sync up the posts and display a marker in the given area. I did get one marker to display when the app is first opened in the initial state location and photos in that particular location are attributed to, but for new uploads, in different locations, the markers do not display.
  

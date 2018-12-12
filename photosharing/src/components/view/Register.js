@@ -18,7 +18,7 @@ class Register extends Component {
 			registration: updated
 		})
 	}
-
+	// Create Profile
 	submitRegistration(event){
 		event.preventDefault()
 

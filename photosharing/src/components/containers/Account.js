@@ -21,7 +21,8 @@ class Account extends Component {
 
 	render(){
 		const currentUser = this.props.account.user
-
+		
+		// Displays username and logout button for when a user logs in
 		return (
 			<div>
 				Account Container

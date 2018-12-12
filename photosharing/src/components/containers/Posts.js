@@ -19,7 +19,7 @@ class Posts extends Component {
 			this.props.fetchPosts(currentLocation)
 		}
 	}
-
+	// Post is linked to a profile and location on map
 	submitPost(post){
 		const user = this.props.account.user
 		if (user == null){

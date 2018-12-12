@@ -41,6 +41,7 @@ router.get('/:action', function(req, res, next) {
 		})
 	}
 
+	// log out endpoint to reset session
 	if (action == 'logout'){
 		req.session.reset()
 		res.redirect('/')

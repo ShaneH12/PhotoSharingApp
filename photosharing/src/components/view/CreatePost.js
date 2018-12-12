@@ -42,6 +42,7 @@ class CreatePost extends Component {
 		this.props.onCreate(updated)
 	}
 
+	// Connecting uploads to Cloudinary account
 	imageSelected(files){
 		console.log('imageSelected: ')
 		const image = files[0]
